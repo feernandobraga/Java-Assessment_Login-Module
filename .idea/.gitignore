@@ -1,2 +1,8 @@
 # Default ignored files
 /workspace.xml
+
+#ignore folder out
+../out
+
+#ignore all java files
+*.java
