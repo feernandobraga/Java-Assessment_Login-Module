@@ -2,7 +2,8 @@
 /workspace.xml
 
 #ignore folder out
-../out
+/out/
+
 
 #ignore all java files
 *.java
