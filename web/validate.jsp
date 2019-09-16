@@ -32,22 +32,40 @@
 <html>
 <head>
     <title>Verification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b4abea9736.js"></script>
 </head>
 <body>
     <% //handling the query return %>
     <c:forEach items="${result.rows}" var="rs">
         <c:choose>
             <c:when test="${rs.returnedUser > 0}">
-                <c:out value="Login Successful"/>
+
+                <div class="mx-auto alert alert-success text-center" role="alert">
+                    <h4 class="alert-heading">Login was succesful!
+                        <i class="far fa-check-circle"></i>
+                    </h4>
+                    <p>Welcome, <c:out value="${username}"/></p>
+                </div>
+
             </c:when>
             <c:otherwise>
-                <c:out value="Invalid credentials"/>
+
+                <div class="mx-auto alert alert-danger text-center" role="alert">
+                    <h4 class="alert-heading">Access denied!
+                        <i class="far fa-times-circle"></i>
+                    </h4>
+                    <p><c:out value="You have entered the wrong credentials!"/></p>
+                </div>
+
             </c:otherwise>
         </c:choose>
     </c:forEach>
 
     <br>
 
-    <a href="login.jsp">Back</a>
+    <p>
+        <a href="login.jsp">Back</a>
+    </p>
 </body>
 </html>
